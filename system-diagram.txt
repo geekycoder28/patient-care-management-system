@@ -1,0 +1,21 @@
+┌──────────────────┐     ┌──────────────────┐
+│   Client Side    │     │   Server Side    │
+│                  │     │                  │
+│   HTTP Requests  │────▶│  Express.js API  │
+│                  │     │                  │
+└──────────────────┘     └────────┬─────────┘
+                                  │
+                         ┌────────▼─────────┐
+                         │   Middleware     │
+                         │                  │
+                         │ - Authentication │
+                         │ - File Upload    │
+                         │   (Multer)       │
+                         └────────┬─────────┘
+                                 │
+           ┌───────────────────┐ │  ┌───────────────────┐
+           │                   │ │  │                   │
+           │  PostgreSQL DB    │◄┴─▶│   File Storage    │
+           │ - Patient Data    │    │   (uploads/)      │
+           │ - Attachments     │    │                   │
+           └───────────────────┘    └───────────────────┘
